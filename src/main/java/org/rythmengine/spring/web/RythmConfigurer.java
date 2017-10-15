@@ -235,7 +235,7 @@ public class RythmConfigurer extends RythmEngineFactory implements
         	try {
         		secretKey = getSecretKeySensor().getSecretKey();
         	} catch(Exception e) {
-        		secretKey = UUID.randomUUID().toString().substring(6);
+        		secretKey = UUID.randomUUID().toString().substring(4);
         	}
         }
     }
