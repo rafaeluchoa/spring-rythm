@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.ServletContext;
 
@@ -231,7 +232,11 @@ public class RythmConfigurer extends RythmEngineFactory implements
         }
         inst = this;
         if (null == secretKey) {
-            secretKey = getSecretKeySensor().getSecretKey();
+        	try {
+        		secretKey = getSecretKeySensor().getSecretKey();
+        	} catch(Exception e) {
+        		secretKey = UUID.randomUUID().toString().substring(6);
+        	}
         }
     }
 
