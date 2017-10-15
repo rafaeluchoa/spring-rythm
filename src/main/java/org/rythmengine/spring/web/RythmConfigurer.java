@@ -245,6 +245,8 @@ public class RythmConfigurer extends RythmEngineFactory implements
         if (null != engine) {
             engine.shutdown();
             CacheServiceRegistry._destroy();
+            engine = null;
+            inst = null;
         }
     }
 
